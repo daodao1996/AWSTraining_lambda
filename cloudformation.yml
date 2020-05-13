@@ -1,0 +1,21 @@
+Resources:
+  CopyFile:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "com.training.CopyFile::copy"
+      Role: "arn:aws:iam::494526681395:role/lambda_dyp"
+      Code:
+        S3Bucket: "aws-training-dingyunpeng"
+        S3Key: "AWSTraining_lambda-assembly-0.1.jar"
+      Runtime: "java8"
+      Timeout: 25
+      TracingConfig:
+        Mode: "Active"
+
+  CopyBucketDyp:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: copy-bucket-dyp
+      VersioningConfiguration:
+        Status: Enabled
