@@ -8,9 +8,7 @@ Resources:
         S3Bucket: "aws-training-dingyunpeng"
         S3Key: "AWSTraining_lambda-assembly-0.1.jar"
       Runtime: "java8"
-      Timeout: 25
-      TracingConfig:
-        Mode: "Active"
+      Timeout: 30
 
   CopyBucketDyp:
     Type: AWS::S3::Bucket
